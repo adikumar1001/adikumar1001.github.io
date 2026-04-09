@@ -9,24 +9,21 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
 :root {
-  --cream:   #faf8f5;
-  --warm:    #f3efe9;
-  --ink:     #1c1917;
-  --ink2:    #44403c;
-  --ink3:    #78716c;
-  --ink4:    #a8a29e;
-  --red:     #b91c1c;
-  --red-bg:  #fef2f2;
+  --cream: #faf8f5;
+  --warm: #f3efe9;
+  --ink: #1c1917;
+  --ink2: #44403c;
+  --ink3: #78716c;
+  --ink4: #a8a29e;
+  --red: #b91c1c;
+  --red-bg: #fef2f2;
   --red-mid: #dc2626;
-  --border:  #e7e2db;
+  --border: #e7e2db;
   --border2: #d4cdc4;
   --max: 820px;
 }
-
 html { scroll-behavior: smooth; }
-
 body {
   font-family: 'Inter', sans-serif;
   font-weight: 400;
@@ -54,7 +51,7 @@ nav {
   font-size: 17px; color: var(--ink); text-decoration: none;
   letter-spacing: 0.01em;
 }
-.nav-links { list-style: none; display: flex; gap: 2rem; }
+.nav-links { list-style: none; display: flex; gap: 1.8rem; }
 .nav-links a {
   font-size: 13px; font-weight: 400; color: var(--ink3);
   text-decoration: none; letter-spacing: 0.02em;
@@ -64,19 +61,16 @@ nav {
 
 /* ── LAYOUT ── */
 main { max-width: var(--max); margin: 0 auto; padding: 0 2.5rem; }
-
 section {
   padding: 5.5rem 0;
   border-bottom: 1px solid var(--border);
 }
 section:last-child { border-bottom: none; }
-
 .section-label {
   font-size: 11px; font-weight: 500;
   letter-spacing: 0.14em; text-transform: uppercase;
   color: var(--red); margin-bottom: 0.6rem;
 }
-
 h2 {
   font-family: 'Playfair Display', serif;
   font-size: 2rem; font-weight: 400;
@@ -86,7 +80,6 @@ h2 {
 
 /* ── HERO ── */
 #about { padding-top: 7rem; }
-
 .hero-name {
   font-family: 'Playfair Display', serif;
   font-size: clamp(2.8rem, 7vw, 4.2rem);
@@ -103,14 +96,12 @@ h2 {
   margin-bottom: 2rem;
   line-height: 1.2;
 }
-
 .hero-bio {
   font-size: 16.5px; color: var(--ink2);
   max-width: 540px; line-height: 1.85;
   margin-bottom: 1.5rem;
   font-weight: 300;
 }
-
 .hero-chips {
   display: flex; flex-wrap: wrap; gap: 8px;
   margin-bottom: 2.5rem;
@@ -122,7 +113,6 @@ h2 {
   border: 1px solid var(--border);
   padding: 4px 12px; border-radius: 20px;
 }
-
 .btn-row { display: flex; gap: 10px; flex-wrap: wrap; }
 .btn {
   display: inline-flex; align-items: center; gap: 6px;
@@ -169,7 +159,6 @@ h2 {
 
 /* ── PROJECTS ── */
 .projects-list { display: flex; flex-direction: column; gap: 0; }
-
 .project-item {
   display: grid;
   grid-template-columns: 56px 1fr;
@@ -179,7 +168,6 @@ h2 {
   transition: background 0.15s;
 }
 .project-item:last-child { border-bottom: none; }
-
 .project-num {
   font-family: 'Playfair Display', serif;
   font-size: 1.4rem; font-weight: 400; font-style: italic;
@@ -188,9 +176,7 @@ h2 {
   text-align: right;
   user-select: none;
 }
-
 .project-body {}
-
 .project-head {
   display: flex; align-items: flex-start;
   justify-content: space-between; gap: 1rem;
@@ -213,19 +199,16 @@ h2 {
   transition: all 0.15s;
 }
 .project-gh:hover { background: #fee2e2; }
-
 .project-impact {
   font-size: 13px; font-weight: 500;
   color: var(--red);
   margin-bottom: 0.5rem;
 }
-
 .project-desc {
   font-size: 14.5px; color: var(--ink2);
   line-height: 1.7; margin-bottom: 1rem;
   font-weight: 300;
 }
-
 .tags { display: flex; flex-wrap: wrap; gap: 6px; }
 .tag {
   font-size: 11.5px; font-weight: 400;
@@ -263,15 +246,21 @@ h2 {
 
 /* ── EXPERIENCE ── */
 .exp-list { display: flex; flex-direction: column; }
-.exp-row {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 0.5rem 2rem;
-  padding: 2.2rem 0;
-  border-bottom: 1px solid var(--border);
-  align-items: start;
+.exp-item {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.8rem 2rem;
+  margin-bottom: 1.2rem;
 }
-.exp-row:last-child { border-bottom: none; padding-bottom: 0; }
+.exp-item:last-child { margin-bottom: 0; }
+.exp-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
 .exp-role {
   font-family: 'Playfair Display', serif;
   font-size: 1.1rem; font-weight: 500; color: var(--ink);
@@ -279,15 +268,20 @@ h2 {
 }
 .exp-company {
   font-size: 13px; font-weight: 500;
-  color: var(--red); margin-bottom: 0.7rem;
+  color: var(--red);
 }
 .exp-date {
   font-size: 12px; color: var(--ink4);
   white-space: nowrap; text-align: right;
-  padding-top: 4px;
   font-weight: 300;
+  flex-shrink: 0;
+  background: var(--warm);
+  border: 1px solid var(--border);
+  padding: 3px 10px;
+  border-radius: 20px;
+  height: fit-content;
 }
-.exp-ul { list-style: none; display: flex; flex-direction: column; gap: 5px; grid-column: 1 / -1; }
+.exp-ul { list-style: none; display: flex; flex-direction: column; gap: 5px; }
 .exp-ul li {
   font-size: 14px; color: var(--ink2); font-weight: 300;
   line-height: 1.65; padding-left: 1.1rem; position: relative;
@@ -297,20 +291,37 @@ h2 {
   color: var(--ink4); font-size: 13px;
 }
 
-/* ── EDU ── */
-.edu-list { display: flex; flex-direction: column; gap: 1.8rem; margin-top: 3rem; }
-.edu-item {}
+/* ── EDUCATION ── */
+.edu-list { display: flex; flex-direction: column; gap: 1.2rem; }
+.edu-item {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.8rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+}
+.edu-left {}
 .edu-deg {
   font-family: 'Playfair Display', serif;
-  font-size: 1rem; font-weight: 500; color: var(--ink);
+  font-size: 1.05rem; font-weight: 500; color: var(--ink);
+  margin-bottom: 4px;
 }
-.edu-school { font-size: 13px; color: var(--red); font-weight: 500; margin: 2px 0; }
+.edu-school { font-size: 13px; color: var(--red); font-weight: 500; margin-bottom: 3px; }
 .edu-meta { font-size: 13px; color: var(--ink4); font-weight: 300; }
+.edu-right { flex-shrink: 0; text-align: right; }
 .gpa-pill {
   display: inline-block; font-size: 11px; font-weight: 500;
   background: var(--red-bg); color: var(--red);
-  border: 1px solid #fca5a5; padding: 1px 9px;
-  border-radius: 10px; margin-left: 8px;
+  border: 1px solid #fca5a5; padding: 3px 10px;
+  border-radius: 10px;
+}
+.edu-courses {
+  font-size: 12px; color: var(--ink4);
+  margin-top: 4px; font-weight: 300;
+  font-style: italic;
 }
 
 /* ── CONTACT ── */
@@ -346,15 +357,17 @@ footer {
 .reveal.visible { opacity: 1; transform: none; }
 
 @media (max-width: 640px) {
-  .nav-links { gap: 1.2rem; }
-  .nav-links a { font-size: 12px; }
+  .nav-links { gap: 1rem; }
+  .nav-links a { font-size: 11px; }
   main { padding: 0 1.5rem; }
   .hero-name { font-size: 2.3rem; }
   h2 { font-size: 1.7rem; }
   .stats-row { grid-template-columns: 1fr; }
   .project-item { grid-template-columns: 36px 1fr; gap: 0 1rem; }
-  .exp-row { grid-template-columns: 1fr; }
-  .exp-date { text-align: left; }
+  .exp-header { flex-direction: column; }
+  .exp-date { align-self: flex-start; }
+  .edu-item { flex-direction: column; }
+  .edu-right { text-align: left; }
 }
 </style>
 </head>
@@ -367,6 +380,7 @@ footer {
       <li><a href="#projects">Projects</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#experience">Experience</a></li>
+      <li><a href="#education">Education</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </div>
@@ -381,24 +395,24 @@ footer {
     <div class="hero-name-sub">turning raw data into decisions</div>
     <p class="hero-bio">
       Analytics professional with 3 years at Bank of America and an MS in Business Analytics
-      at UMass Amherst (GPA 4.0). I build end-to-end pipelines, BI dashboards, and ML models
-      with a focus on healthcare analytics, forecasting, and decision-support tools.
+      at UMass Amherst (GPA 4.0, graduating May 2026). I build end-to-end data pipelines,
+      BI dashboards, and ML models  across healthcare, finance, and sports analytics 
+      and translate raw data into decisions stakeholders can act on.
     </p>
     <div class="hero-chips">
       <span class="chip">📍 Amherst, MA</span>
-      <span class="chip">MS Business Analytics · May 2026</span>
-      <span class="chip">Open to full-time roles</span>
+      <span class="chip">Graduating May 2026</span>
+      <span class="chip">Open to Data Analytics · BI · ML roles</span>
     </div>
     <div class="btn-row">
       <a href="#projects" class="btn btn-primary">View my work</a>
       <a href="https://www.linkedin.com/in/aditya-kumar1001/" class="btn btn-ghost" target="_blank">LinkedIn ↗</a>
       <a href="https://github.com/adikumar1001" class="btn btn-ghost" target="_blank">GitHub ↗</a>
     </div>
-
     <div class="stats-row reveal" style="transition-delay:0.1s">
       <div class="stat-cell">
-        <div class="stat-number">3+</div>
-        <div class="stat-label">Years at Bank of America</div>
+        <div class="stat-number">90%</div>
+        <div class="stat-label">Downtime reduction · Bank of America</div>
       </div>
       <div class="stat-cell">
         <div class="stat-number">4.0</div>
@@ -406,7 +420,7 @@ footer {
       </div>
       <div class="stat-cell">
         <div class="stat-number">720h</div>
-        <div class="stat-label">Annual savings via OpEx initiative</div>
+        <div class="stat-label">Saved via OpEx — 55% of that year's annual goal</div>
       </div>
     </div>
   </section>
@@ -424,15 +438,16 @@ footer {
             <span class="project-title">Population Health Analytics: Heart Disease Risk &amp; Equity</span>
             <a href="https://github.com/adikumar1001/Heart-Disease" class="project-gh" target="_blank">GitHub ↗</a>
           </div>
-          <div class="project-impact">253,680 records · Power BI dashboard · 3-page executive report</div>
+          <div class="project-impact">253,680 records · PostgreSQL pipeline · 3-page Power BI executive report</div>
           <p class="project-desc">
-            End-to-end healthcare analytics on the BRFSS 2015 dataset. Designed a full PostgreSQL + Python pipeline
-            (staging → fact → marts), automated QA checks, and delivered a 3-page Power BI dashboard covering
-            executive KPIs, risk-driver uplift analysis, and equity/access gaps across demographics.
+            End-to-end healthcare analytics on the BRFSS 2015 dataset. Designed a reproducible pipeline in
+            PostgreSQL + Python (staging → fact → marts), ran automated data quality checks, and delivered a
+            3-page Power BI dashboard covering executive KPIs, risk-driver uplift analysis, and equity/access
+            gaps across demographics.
           </p>
           <div class="tags">
             <span class="tag">PostgreSQL</span><span class="tag">Python</span><span class="tag">ETL</span>
-            <span class="tag">Power BI</span><span class="tag">Tableau</span><span class="tag">Healthcare Analytics</span>
+            <span class="tag">Power BI</span><span class="tag">Healthcare Analytics</span>
           </div>
         </div>
       </div>
@@ -441,15 +456,61 @@ footer {
         <div class="project-num">02</div>
         <div class="project-body">
           <div class="project-head">
-            <span class="project-title">Airbnb Price Prediction — Bozeman, MT</span>
-            <a href="https://github.com/adikumar1001" class="project-gh" target="_blank">GitHub ↗</a>
+            <span class="project-title">EPL xG &amp; Comeback Analysis</span>
+            <a href="https://github.com/adikumar1001/English-Premier-League-Season-Prediction" class="project-gh" target="_blank">GitHub ↗</a>
           </div>
-          <div class="project-impact">R² 0.62 · MAE ≈ $54 · 40,000+ reviews processed</div>
+          <div class="project-impact">xG proxy modeling · Comeback prediction · Tottenham 5.35% · Brighton avg xG 2.60</div>
           <p class="project-desc">
-            Full ML pipeline combining listings with 40k+ guest reviews. Engineered features (amenity flags,
-            VADER sentiment, geo-clusters), removed multicollinearity via VIF, then benchmarked Linear Regression,
-            Random Forest, XGBoost (Hyperopt/TPE), and a Neural Network (Keras). Best: NN at R² 0.62, MAE ≈ $54.
-            Key drivers: bedrooms, amenities, location, and sentiment.
+            Built a sports analytics pipeline to estimate expected goals (xG proxy) and model comeback probability
+            for Premier League matches. Used Random Forest regressors on match stats (shots, SOT, corners, fouls,
+            cards) to generate home/away xG and team averages. Applied Logistic Regression with SMOTE to predict
+            whether a team trailing at halftime draws or wins  exported team comeback rates and match-level
+            predictions to Excel. Key findings: highest home comeback rate Tottenham - 5.35%; top avg home xG -
+            Brighton 2.60; top avg away xG  Liverpool - 1.55.
+          </p>
+          <div class="tags">
+            <span class="tag">Python</span><span class="tag">Random Forest</span><span class="tag">Logistic Regression</span>
+            <span class="tag">SMOTE</span><span class="tag">Sports Analytics</span><span class="tag">Excel</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-item reveal">
+        <div class="project-num">03</div>
+        <div class="project-body">
+          <div class="project-head">
+            <span class="project-title">NBA Performance Analytics — SQL</span>
+            <a href="https://github.com/adikumar1001/NBA_Performance_Analysis" class="project-gh" target="_blank">GitHub ↗</a>
+          </div>
+          <div class="project-impact">SQLite · 2000–2025 data · Window functions · Clutch &amp; draft value metrics</div>
+          <p class="project-desc">
+            SQL-first sports analytics project on a SQLite NBA database spanning 2000–2025. Built reproducible
+            queries for team Win% and Avg PTS trends, back-to-back vs. rest win rate comparisons (LAG,
+            JULIANDAY window functions), clutch player rankings (Q4 last 5:00 in games within 5 pts), and
+            draft pick value mapped to career longevity by tier. Outputs exported to Excel/CSV with a
+            short report. Fully reproducible in DBeaver/DB Browser — no Python or R required.
+          </p>
+          <div class="tags">
+            <span class="tag">SQL</span><span class="tag">SQLite</span><span class="tag">Window Functions</span>
+            <span class="tag">Sports Analytics</span><span class="tag">Excel</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-item reveal">
+        <div class="project-num">04</div>
+        <div class="project-body">
+          <div class="project-head">
+            <span class="project-title">Airbnb Price Prediction — Bozeman, MT</span>
+            <a href="https://github.com/adikumar1001/Airbnb_Price_Prediction" class="project-gh" target="_blank">GitHub ↗</a>
+          </div>
+          <div class="project-impact">R² 0.62 · MAE ≈ $54 · 40,000+ reviews processed · Neural Network best model</div>
+          <p class="project-desc">
+            End-to-end ML pipeline combining listings data with 40k+ guest reviews. Engineered features
+            (amenity binary flags, VADER sentiment, geo-clusters), removed multicollinearity via VIF, then
+            benchmarked Linear Regression → Random Forest → XGBoost (Hyperopt/TPE) → Neural Network (Keras,
+            dropout/L2). Best: NN at R² 0.62, MAE ≈ $54. Key price drivers: bedrooms, bathrooms, amenities,
+            minimum nights, location, and sentiment score.
           </p>
           <div class="tags">
             <span class="tag">Python</span><span class="tag">XGBoost</span><span class="tag">Keras</span>
@@ -459,17 +520,19 @@ footer {
       </div>
 
       <div class="project-item reveal">
-        <div class="project-num">03</div>
+        <div class="project-num">05</div>
         <div class="project-body">
           <div class="project-head">
             <span class="project-title">Loan Default Prediction — Credit Risk ML in R</span>
-            <a href="https://github.com/adikumar1001" class="project-gh" target="_blank">GitHub ↗</a>
+            <a href="https://github.com/adikumar1001/Loan-Approval-Prediction" class="project-gh" target="_blank">GitHub ↗</a>
           </div>
-          <div class="project-impact">92.9% accuracy · AUC 0.97 · 45,000 applications</div>
+          <div class="project-impact">92.9% accuracy · AUC 0.9716 · 45,000 loan applications</div>
           <p class="project-desc">
-            Compared Random Forest, GBM, and KNN on 45,000 loan applications. Best overall: Random Forest
-            (Accuracy 92.9%, Sensitivity 78%, Specificity 97%, Precision 89.8%). Best AUC: GBM at 0.9716.
-            Delivered ROC visuals and an RMarkdown report to help lenders flag high-risk applicants earlier.
+            Compared Random Forest (ranger), GBM, and KNN on 45,000 loan applications with demographic,
+            financial, and loan attributes. Cleaned errors (age &gt;100), removed near/zero-variance features,
+            dummy-encoded categoricals, split 70/15/15 train/validation/test. Best overall: Random Forest
+            (Accuracy 92.9%, Sensitivity 78.0%, Specificity 97.0%, Precision 89.8%). Best AUC: GBM at 0.9716.
+            Delivered RMarkdown report and ROC visuals to help lenders flag high-risk applicants earlier.
           </p>
           <div class="tags">
             <span class="tag">R</span><span class="tag">Random Forest</span><span class="tag">GBM</span>
@@ -479,42 +542,44 @@ footer {
       </div>
 
       <div class="project-item reveal">
-        <div class="project-num">04</div>
+        <div class="project-num">06</div>
         <div class="project-body">
           <div class="project-head">
-            <span class="project-title">Whiskey Assortment Optimization — Cluster Analysis</span>
-            <a href="https://github.com/adikumar1001" class="project-gh" target="_blank">GitHub ↗</a>
+            <span class="project-title">Netflix Content Analytics Dashboard</span>
+            <a href="https://github.com/adikumar1001/Netflix_Content_Analysis" class="project-gh" target="_blank">GitHub ↗</a>
           </div>
-          <div class="project-impact">111 Scotch brands · 3-cluster solution · Retail stocking recommendations</div>
+          <div class="project-impact">Power BI · DAX measures · Global content strategy insights</div>
           <p class="project-desc">
-            Applied K-Means clustering on sensory attributes (color, nose, body, palate, finish) for 111 Scotch
-            whiskey brands. Selected a 3-cluster solution using silhouette scores and the elbow method, identifying
-            light/fresh, sweet-sherried, and peated-smoky segments. Added secondary analysis on age, ABV, and
-            region to refine stocking recommendations for a boutique spirits retailer.
+            Power BI dashboard analyzing Netflix's global content library across catalog overview (movies vs.
+            shows, avg IMDb score, age segmentation), ratings &amp; popularity breakdown (low/mid/high-rated
+            content, IMDb scores vs. votes scatter), and content growth trends by year and decade. Designed
+            for stakeholders to make data-driven content strategy decisions using interactive slicers and filters.
           </p>
           <div class="tags">
-            <span class="tag">Python</span><span class="tag">K-Means</span><span class="tag">Scikit-learn</span>
-            <span class="tag">Silhouette Analysis</span><span class="tag">Pandas</span>
+            <span class="tag">Power BI</span><span class="tag">DAX</span>
+            <span class="tag">Data Visualization</span><span class="tag">Content Analytics</span>
           </div>
         </div>
       </div>
 
       <div class="project-item reveal">
-        <div class="project-num">05</div>
+        <div class="project-num">07</div>
         <div class="project-body">
           <div class="project-head">
-            <span class="project-title">Netflix Content Analytics Dashboard</span>
-            <a href="https://github.com/adikumar1001" class="project-gh" target="_blank">GitHub ↗</a>
+            <span class="project-title">East Coast Living Index — Interactive Excel Dashboard</span>
+            <a href="https://github.com/adikumar1001/Housing_Analysis_Excel" class="project-gh" target="_blank">GitHub ↗</a>
           </div>
-          <div class="project-impact">Power BI · DAX measures · Global content strategy insights</div>
+          <div class="project-impact">14 states · 6 factors · Dynamic weight sliders · LAMBDA &amp; dynamic arrays</div>
           <p class="project-desc">
-            Power BI dashboard analyzing Netflix's global content library. Covers catalog overview (movies vs. shows,
-            avg IMDb score, age segmentation), ratings and popularity breakdown, content growth trends by year and
-            decade, and scatter plots of IMDb scores vs. votes — enabling data-driven content strategy decisions.
+            Built an interactive dashboard comparing 14 U.S. East Coast states across six factors: average
+            temperature, crime rate, healthcare quality, housing affordability, education score, and cost of
+            living. Created a transparent composite score with min-max normalization and weight sliders so users
+            can reflect their own priorities  top state, top 5, and category winners update instantly. Data
+            modeled with Power Query; calculations use dynamic arrays (LET, LAMBDA, SORT, FILTER, XLOOKUP).
           </p>
           <div class="tags">
-            <span class="tag">Power BI</span><span class="tag">DAX</span>
-            <span class="tag">Data Visualization</span><span class="tag">Content Analytics</span>
+            <span class="tag">Excel</span><span class="tag">Power Query</span><span class="tag">LAMBDA</span>
+            <span class="tag">Dynamic Arrays</span><span class="tag">XLOOKUP</span><span class="tag">Dashboard</span>
           </div>
         </div>
       </div>
@@ -558,42 +623,48 @@ footer {
   <section id="experience">
     <div class="section-label">Background</div>
     <h2>Experience</h2>
-
     <div class="exp-list">
 
-      <div class="exp-row reveal">
-        <div>
-          <div class="exp-role">Technical Analyst / Data Analyst</div>
-          <div class="exp-company">Bank of America</div>
+      <div class="exp-item reveal">
+        <div class="exp-header">
+          <div>
+            <div class="exp-role">Technical Analyst / Data Analyst</div>
+            <div class="exp-company">Bank of America · GIFT City, India</div>
+          </div>
+          <div class="exp-date">June 2021 – July 2024</div>
         </div>
-        <div class="exp-date">June 2021 – July 2024</div>
         <ul class="exp-ul">
-          <li>Resolved 100+ application incidents quarterly — improved uptime by 15%, reduced downtime incidents by 90%</li>
-          <li>Built Splunk dashboards for real-time monitoring and root-cause analysis across production environments</li>
-          <li>Automated operational reports (Excel macros, XLOOKUP, PivotTables) — cut turnaround time by 70%</li>
-          <li>Managed AutoSys batch workflows sustaining 95% on-time completion rate</li>
-          <li>Led an OpEx initiative that saved 720 hours per year through process re-engineering</li>
+         <li>Supported Financial Center Technology applications in a high-availability production environment, combining application support, data troubleshooting, release monitoring, and operational reporting.</li>
+         <li>Investigated and resolved 100+ application incidents each quarter using ITSM workflows, SQL diagnostics, and cross-functional coordination with development and infrastructure teams.</li>
+         <li>Built custom Splunk dashboards and used Dynatrace to monitor production health, speed up root-cause analysis, and help improve uptime while reducing post-release downtime incidents.</li>
+         <li>Automated daily and weekly reporting workflows for business-critical applications using Excel macros, XLOOKUP, and PivotTables, improving accuracy and reducing turnaround time by 70%.</li>
+         <li>Managed AutoSys batch workflows, troubleshot job failures, performed RCA, and helped sustain a 95% on-time completion rate for scheduled processes.</li>
+         <li>Contributed to change requests, post-release issue resolution, and process improvement initiatives, including an OpEx effort that saved 720 hours annually.</li>
         </ul>
       </div>
 
-      <div class="exp-row reveal">
-        <div>
-          <div class="exp-role">Data Analyst Intern</div>
-          <div class="exp-company">ECS Infotech Pvt. Ltd.</div>
+      <div class="exp-item reveal">
+        <div class="exp-header">
+          <div>
+            <div class="exp-role">Data Analyst Intern</div>
+            <div class="exp-company">ECS Infotech Pvt. Ltd. · Ahmedabad, India</div>
+          </div>
+          <div class="exp-date">Nov 2019 – Jan 2020</div>
         </div>
-        <div class="exp-date">Nov 2019 – Jan 2020</div>
         <ul class="exp-ul">
           <li>Performed forensic data collection and SQL analysis to support active fraud investigations</li>
           <li>Built investigator dashboards surfacing anomalous access patterns and high-risk transactions</li>
         </ul>
       </div>
 
-      <div class="exp-row reveal">
-        <div>
-          <div class="exp-role">Web Intern</div>
-          <div class="exp-company">Oil and Natural Gas Corporation Ltd (ONGC) · Sivasagar, Assam</div>
+      <div class="exp-item reveal">
+        <div class="exp-header">
+          <div>
+            <div class="exp-role">Web Intern</div>
+            <div class="exp-company">Oil and Natural Gas Corporation Ltd (ONGC) · Sivasagar, Assam</div>
+          </div>
+          <div class="exp-date">June 2019 – July 2019</div>
         </div>
-        <div class="exp-date">June 2019 – July 2019</div>
         <ul class="exp-ul">
           <li>Designed, developed, and deployed a custom web application using PHP and MySQL within a one-month timeline</li>
           <li>Delivered all requirements on schedule, significantly improving user experience for the internal tool</li>
@@ -601,23 +672,38 @@ footer {
       </div>
 
     </div>
+  </section>
 
+  <!-- EDUCATION -->
+  <section id="education">
+    <div class="section-label">Academic background</div>
+    <h2>Education</h2>
     <div class="edu-list">
-      <div class="edu-item reveal">
-        <div class="edu-deg">
-          MS in Business Analytics
-          <span class="gpa-pill">GPA 4.00</span>
-        </div>
-        <div class="edu-school">University of Massachusetts Amherst — Isenberg School of Management</div>
-        <div class="edu-meta">Candidate May 2026 · Amherst, MA</div>
-      </div>
-      <div class="edu-item reveal">
-        <div class="edu-deg">BTech in Computer Science</div>
-        <div class="edu-school">SRM Institute of Science &amp; Technology</div>
-        <div class="edu-meta">May 2021 · GPA 8.29 / 10.0</div>
-      </div>
-    </div>
 
+      <div class="edu-item reveal">
+        <div class="edu-left">
+          <div class="edu-deg">Master of Science in Business Analytics</div>
+          <div class="edu-school">University of Massachusetts Amherst — Isenberg School of Management</div>
+          <div class="edu-meta">Candidate May 2026 · Amherst, MA</div>
+          <div class="edu-courses">AI · Database &amp; SQL · Statistics · Python · Machine Learning · Supply Chain</div>
+        </div>
+        <div class="edu-right">
+          <div class="gpa-pill">GPA 4.00 / 4.00</div>
+        </div>
+      </div>
+
+      <div class="edu-item reveal">
+        <div class="edu-left">
+          <div class="edu-deg">Bachelor of Technology in Computer Science</div>
+          <div class="edu-school">SRM Institute of Science &amp; Technology</div>
+          <div class="edu-meta">May 2021 · Chennai, India</div>
+        </div>
+        <div class="edu-right">
+          <div class="gpa-pill">GPA 8.29 / 10.0</div>
+        </div>
+      </div>
+
+    </div>
   </section>
 
   <!-- CONTACT -->
@@ -630,12 +716,12 @@ footer {
     </p>
     <div class="contact-cards reveal">
       <div class="contact-card">
-        <div class="cc-label">Email</div>
+        <div class="cc-label">Email (UMass)</div>
         <div class="cc-val"><a href="mailto:adityaku@umass.edu">adityaku@umass.edu</a></div>
       </div>
       <div class="contact-card">
-        <div class="cc-label">Phone</div>
-        <div class="cc-val">+1 (413) 472-0332</div>
+        <div class="cc-label">Email (Personal)</div>
+        <div class="cc-val"><a href="mailto:adikumar1001@gmail.com">adikumar1001@gmail.com</a></div>
       </div>
       <div class="contact-card">
         <div class="cc-label">LinkedIn</div>
@@ -647,7 +733,7 @@ footer {
       </div>
     </div>
     <div class="btn-row">
-      <a href="mailto:adityaku@umass.edu" class="btn btn-primary">Send me an email</a>
+      <a href="mailto:adikumar1001@gmail.com" class="btn btn-primary">Send me an email</a>
       <a href="https://www.linkedin.com/in/aditya-kumar1001/" class="btn btn-ghost" target="_blank">LinkedIn ↗</a>
     </div>
   </section>
@@ -660,12 +746,12 @@ footer {
 </footer>
 
 <script>
-  const obs = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
-    });
-  }, { threshold: 0.07 });
-  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
+  });
+}, { threshold: 0.07 });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 </script>
 
 </body>
