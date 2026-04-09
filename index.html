@@ -3,121 +3,370 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Aditya Kumar — Data & Analytics Portfolio</title>
+<title>Aditya Kumar — Data & Analytics</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  :root {
-    --ink: #18181b; --muted: #71717a; --subtle: #a1a1aa;
-    --border: #e4e4e7; --surface: #f9f9f9;
-    --accent: #1d4ed8; --accent-hover: #1e40af; --max: 780px;
-  }
-  html { scroll-behavior: smooth; }
-  body { font-family: 'DM Sans', sans-serif; font-weight: 400; color: var(--ink); background: #fff; line-height: 1.7; font-size: 16px; }
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-  nav { position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,0.93); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border); padding: 0 2rem; }
-  nav .inner { max-width: var(--max); margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 56px; }
-  nav .logo { font-family: 'DM Serif Display', serif; font-size: 18px; color: var(--ink); text-decoration: none; }
-  nav ul { list-style: none; display: flex; gap: 1.6rem; }
-  nav a { font-size: 14px; color: var(--muted); text-decoration: none; transition: color 0.2s; }
-  nav a:hover { color: var(--ink); }
+:root {
+  --cream:   #faf8f5;
+  --warm:    #f3efe9;
+  --ink:     #1c1917;
+  --ink2:    #44403c;
+  --ink3:    #78716c;
+  --ink4:    #a8a29e;
+  --red:     #b91c1c;
+  --red-bg:  #fef2f2;
+  --red-mid: #dc2626;
+  --border:  #e7e2db;
+  --border2: #d4cdc4;
+  --max: 820px;
+}
 
-  main { max-width: var(--max); margin: 0 auto; padding: 0 2rem; }
-  section { padding: 5rem 0; border-bottom: 1px solid var(--border); }
-  section:last-child { border-bottom: none; }
-  h2 { font-family: 'DM Serif Display', serif; font-size: 1.9rem; font-weight: 400; margin-bottom: 2rem; letter-spacing: -0.02em; }
+html { scroll-behavior: smooth; }
 
-  #about { padding-top: 6rem; }
-  .eyebrow { font-size: 12px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 1rem; }
-  .hero-name { font-family: 'DM Serif Display', serif; font-size: clamp(2.4rem, 6vw, 3.7rem); line-height: 1.08; letter-spacing: -0.03em; margin-bottom: 1.5rem; }
-  .hero-name em { font-style: italic; color: var(--muted); }
-  .hero-bio { font-size: 17px; color: var(--muted); max-width: 560px; line-height: 1.8; margin-bottom: 1.25rem; }
-  .hero-meta { display: flex; flex-wrap: wrap; gap: 1.2rem; font-size: 13px; color: var(--subtle); margin-bottom: 2.5rem; }
-  .btn-row { display: flex; gap: 10px; flex-wrap: wrap; }
-  .btn { display: inline-block; padding: 10px 20px; font-size: 14px; font-weight: 500; border-radius: 6px; text-decoration: none; transition: all 0.2s; }
-  .btn-primary { background: var(--ink); color: #fff; }
-  .btn-primary:hover { background: #27272a; }
-  .btn-outline { border: 1px solid var(--border); color: var(--ink); background: #fff; }
-  .btn-outline:hover { background: var(--surface); }
+body {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  color: var(--ink);
+  background: var(--cream);
+  line-height: 1.7;
+  font-size: 16px;
+}
 
-  .project-grid { display: flex; flex-direction: column; gap: 1.25rem; }
-  .project-card { border: 1px solid var(--border); border-radius: 10px; padding: 1.75rem; background: #fff; transition: box-shadow 0.25s, transform 0.25s; }
-  .project-card:hover { box-shadow: 0 4px 28px rgba(0,0,0,0.07); transform: translateY(-2px); }
-  .project-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; margin-bottom: 0.6rem; }
-  .project-title { font-family: 'DM Serif Display', serif; font-size: 1.15rem; font-weight: 400; letter-spacing: -0.01em; }
-  .project-link { font-size: 13px; color: var(--accent); text-decoration: none; font-weight: 500; white-space: nowrap; flex-shrink: 0; }
-  .project-desc { font-size: 15px; color: var(--muted); margin-bottom: 1.25rem; line-height: 1.65; }
-  .tag-row { display: flex; flex-wrap: wrap; gap: 7px; }
-  .tag { font-size: 12px; font-weight: 500; background: var(--surface); border: 1px solid var(--border); padding: 3px 10px; border-radius: 4px; color: var(--muted); }
+/* ── NAV ── */
+nav {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(250,248,245,0.96);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-inner {
+  max-width: var(--max); margin: 0 auto;
+  padding: 0 2.5rem;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 58px;
+}
+.nav-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 17px; color: var(--ink); text-decoration: none;
+  letter-spacing: 0.01em;
+}
+.nav-links { list-style: none; display: flex; gap: 2rem; }
+.nav-links a {
+  font-size: 13px; font-weight: 400; color: var(--ink3);
+  text-decoration: none; letter-spacing: 0.02em;
+  transition: color 0.18s;
+}
+.nav-links a:hover { color: var(--red); }
 
-  .skills-wrap { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 2rem; }
-  .skill-group h3 { font-size: 12px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.09em; color: var(--subtle); margin-bottom: 0.75rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); }
-  .skill-list { list-style: none; display: flex; flex-direction: column; gap: 5px; }
-  .skill-list li { font-size: 14px; color: var(--ink); padding-left: 1rem; position: relative; }
-  .skill-list li::before { content: ''; position: absolute; left: 0; top: 50%; transform: translateY(-50%); width: 4px; height: 4px; border-radius: 50%; background: var(--accent); }
+/* ── LAYOUT ── */
+main { max-width: var(--max); margin: 0 auto; padding: 0 2.5rem; }
 
-  .exp-list { display: flex; flex-direction: column; }
-  .exp-item { padding: 2rem 0; border-bottom: 1px solid var(--border); }
-  .exp-item:last-child { border-bottom: none; padding-bottom: 0; }
-  .exp-meta { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; flex-wrap: wrap; margin-bottom: 0.2rem; }
-  .exp-role { font-size: 17px; font-weight: 500; }
-  .exp-date { font-size: 13px; color: var(--subtle); }
-  .exp-company { font-size: 14px; color: var(--accent); font-weight: 500; margin-bottom: 0.75rem; }
-  .exp-bullets { list-style: none; display: flex; flex-direction: column; gap: 6px; }
-  .exp-bullets li { font-size: 15px; color: var(--muted); line-height: 1.6; padding-left: 1.2rem; position: relative; }
-  .exp-bullets li::before { content: '→'; position: absolute; left: 0; color: var(--subtle); font-size: 13px; }
+section {
+  padding: 5.5rem 0;
+  border-bottom: 1px solid var(--border);
+}
+section:last-child { border-bottom: none; }
 
-  .edu-section { margin-top: 2.5rem; }
-  .edu-section h3 { font-family: 'DM Serif Display', serif; font-size: 1.2rem; font-weight: 400; color: var(--muted); margin-bottom: 1.5rem; }
-  .edu-item { display: flex; flex-direction: column; gap: 1.5rem; }
-  .edu-row { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 1rem; margin-bottom: 0.2rem; }
-  .edu-degree { font-size: 17px; font-weight: 500; }
-  .edu-gpa { font-size: 12px; font-weight: 500; background: #eff6ff; color: var(--accent); padding: 2px 10px; border-radius: 4px; }
-  .edu-school { font-size: 14px; color: var(--accent); font-weight: 500; margin-bottom: 0.25rem; }
-  .edu-detail { font-size: 14px; color: var(--muted); }
+.section-label {
+  font-size: 11px; font-weight: 500;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--red); margin-bottom: 0.6rem;
+}
 
-  .post-list { display: flex; flex-direction: column; }
-  .post-item { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; padding: 1.1rem 0; border-bottom: 1px solid var(--border); }
-  .post-item:last-child { border-bottom: none; }
-  .post-left { display: flex; align-items: baseline; gap: 8px; }
-  .post-title { font-size: 15px; font-weight: 500; color: var(--ink); text-decoration: none; transition: color 0.2s; }
-  .post-title:hover { color: var(--accent); }
-  .post-tag { font-size: 11px; font-weight: 500; background: var(--surface); border: 1px solid var(--border); padding: 2px 8px; border-radius: 4px; color: var(--subtle); white-space: nowrap; }
-  .post-date { font-size: 13px; color: var(--subtle); white-space: nowrap; flex-shrink: 0; }
+h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem; font-weight: 400;
+  color: var(--ink); letter-spacing: -0.01em;
+  margin-bottom: 2.5rem;
+}
 
-  .contact-bio { font-size: 17px; color: var(--muted); max-width: 500px; margin-bottom: 2rem; line-height: 1.8; }
-  .contact-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 1rem; margin-bottom: 2rem; }
-  .contact-item { border: 1px solid var(--border); border-radius: 8px; padding: 1rem 1.25rem; background: var(--surface); }
-  .contact-label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--subtle); margin-bottom: 4px; }
-  .contact-val { font-size: 14px; color: var(--ink); font-weight: 500; word-break: break-all; }
-  .contact-val a { color: var(--accent); text-decoration: none; }
-  .contact-val a:hover { text-decoration: underline; }
+/* ── HERO ── */
+#about { padding-top: 7rem; }
 
-  footer { max-width: var(--max); margin: 0 auto; padding: 2rem; font-size: 13px; color: var(--subtle); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem; }
+.hero-name {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.8rem, 7vw, 4.2rem);
+  font-weight: 400; line-height: 1.05;
+  letter-spacing: -0.03em;
+  color: var(--ink);
+  margin-bottom: 0.3rem;
+}
+.hero-name-sub {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.6rem, 4vw, 2.2rem);
+  font-weight: 400; font-style: italic;
+  color: var(--ink3);
+  margin-bottom: 2rem;
+  line-height: 1.2;
+}
 
-  .reveal { opacity: 0; transform: translateY(16px); transition: opacity 0.5s ease, transform 0.5s ease; }
-  .reveal.visible { opacity: 1; transform: none; }
+.hero-bio {
+  font-size: 16.5px; color: var(--ink2);
+  max-width: 540px; line-height: 1.85;
+  margin-bottom: 1.5rem;
+  font-weight: 300;
+}
 
-  @media (max-width: 600px) {
-    nav ul { gap: 1rem; }
-    nav a { font-size: 12px; }
-    main { padding: 0 1.25rem; }
-    h2 { font-size: 1.6rem; }
-  }
+.hero-chips {
+  display: flex; flex-wrap: wrap; gap: 8px;
+  margin-bottom: 2.5rem;
+}
+.chip {
+  font-size: 12px; font-weight: 400;
+  color: var(--ink3);
+  background: var(--warm);
+  border: 1px solid var(--border);
+  padding: 4px 12px; border-radius: 20px;
+}
+
+.btn-row { display: flex; gap: 10px; flex-wrap: wrap; }
+.btn {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 11px 22px; font-size: 13.5px; font-weight: 500;
+  border-radius: 7px; text-decoration: none;
+  letter-spacing: 0.01em; transition: all 0.18s;
+  font-family: 'Inter', sans-serif;
+}
+.btn-primary {
+  background: var(--ink); color: var(--cream);
+}
+.btn-primary:hover { background: #292524; }
+.btn-ghost {
+  background: transparent;
+  border: 1px solid var(--border2);
+  color: var(--ink2);
+}
+.btn-ghost:hover { background: var(--warm); border-color: var(--ink4); }
+
+/* ── STATS ROW ── */
+.stats-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top: 4rem;
+}
+.stat-cell {
+  background: #fff;
+  padding: 1.4rem 1.5rem;
+}
+.stat-number {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.9rem; font-weight: 500;
+  color: var(--red); line-height: 1;
+  margin-bottom: 4px;
+}
+.stat-label {
+  font-size: 12px; color: var(--ink3); font-weight: 400;
+}
+
+/* ── PROJECTS ── */
+.projects-list { display: flex; flex-direction: column; gap: 0; }
+
+.project-item {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: 0 1.5rem;
+  padding: 2rem 0;
+  border-bottom: 1px solid var(--border);
+  transition: background 0.15s;
+}
+.project-item:last-child { border-bottom: none; }
+
+.project-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem; font-weight: 400; font-style: italic;
+  color: var(--border2);
+  padding-top: 3px;
+  text-align: right;
+  user-select: none;
+}
+
+.project-body {}
+
+.project-head {
+  display: flex; align-items: flex-start;
+  justify-content: space-between; gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+.project-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.15rem; font-weight: 500;
+  color: var(--ink); letter-spacing: -0.01em;
+  line-height: 1.3;
+}
+.project-gh {
+  font-size: 12px; font-weight: 500;
+  color: var(--red); text-decoration: none;
+  white-space: nowrap; flex-shrink: 0;
+  padding: 3px 10px;
+  border: 1px solid #fca5a5;
+  border-radius: 5px;
+  background: var(--red-bg);
+  transition: all 0.15s;
+}
+.project-gh:hover { background: #fee2e2; }
+
+.project-impact {
+  font-size: 13px; font-weight: 500;
+  color: var(--red);
+  margin-bottom: 0.5rem;
+}
+
+.project-desc {
+  font-size: 14.5px; color: var(--ink2);
+  line-height: 1.7; margin-bottom: 1rem;
+  font-weight: 300;
+}
+
+.tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.tag {
+  font-size: 11.5px; font-weight: 400;
+  color: var(--ink3);
+  background: var(--warm);
+  border: 1px solid var(--border);
+  padding: 3px 9px; border-radius: 4px;
+}
+
+/* ── SKILLS ── */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 2rem;
+}
+.skill-col h3 {
+  font-size: 11px; font-weight: 500;
+  text-transform: uppercase; letter-spacing: 0.1em;
+  color: var(--ink4);
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 0.8rem;
+}
+.skill-col ul { list-style: none; display: flex; flex-direction: column; gap: 5px; }
+.skill-col li {
+  font-size: 14px; color: var(--ink2);
+  font-weight: 300; padding-left: 0.9rem; position: relative;
+}
+.skill-col li::before {
+  content: ''; position: absolute; left: 0; top: 50%;
+  transform: translateY(-50%);
+  width: 3px; height: 3px; border-radius: 50%;
+  background: var(--red);
+}
+
+/* ── EXPERIENCE ── */
+.exp-list { display: flex; flex-direction: column; }
+.exp-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.5rem 2rem;
+  padding: 2.2rem 0;
+  border-bottom: 1px solid var(--border);
+  align-items: start;
+}
+.exp-row:last-child { border-bottom: none; padding-bottom: 0; }
+.exp-role {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem; font-weight: 500; color: var(--ink);
+  margin-bottom: 3px;
+}
+.exp-company {
+  font-size: 13px; font-weight: 500;
+  color: var(--red); margin-bottom: 0.7rem;
+}
+.exp-date {
+  font-size: 12px; color: var(--ink4);
+  white-space: nowrap; text-align: right;
+  padding-top: 4px;
+  font-weight: 300;
+}
+.exp-ul { list-style: none; display: flex; flex-direction: column; gap: 5px; grid-column: 1 / -1; }
+.exp-ul li {
+  font-size: 14px; color: var(--ink2); font-weight: 300;
+  line-height: 1.65; padding-left: 1.1rem; position: relative;
+}
+.exp-ul li::before {
+  content: '–'; position: absolute; left: 0;
+  color: var(--ink4); font-size: 13px;
+}
+
+/* ── EDU ── */
+.edu-list { display: flex; flex-direction: column; gap: 1.8rem; margin-top: 3rem; }
+.edu-item {}
+.edu-deg {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem; font-weight: 500; color: var(--ink);
+}
+.edu-school { font-size: 13px; color: var(--red); font-weight: 500; margin: 2px 0; }
+.edu-meta { font-size: 13px; color: var(--ink4); font-weight: 300; }
+.gpa-pill {
+  display: inline-block; font-size: 11px; font-weight: 500;
+  background: var(--red-bg); color: var(--red);
+  border: 1px solid #fca5a5; padding: 1px 9px;
+  border-radius: 10px; margin-left: 8px;
+}
+
+/* ── CONTACT ── */
+.contact-note {
+  font-size: 16.5px; color: var(--ink2); font-weight: 300;
+  max-width: 460px; line-height: 1.85; margin-bottom: 2.5rem;
+}
+.contact-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(175px, 1fr));
+  gap: 1px; background: var(--border);
+  border: 1px solid var(--border); border-radius: 10px;
+  overflow: hidden; margin-bottom: 2rem;
+}
+.contact-card {
+  background: #fff; padding: 1.1rem 1.3rem;
+}
+.cc-label { font-size: 10.5px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink4); margin-bottom: 5px; }
+.cc-val { font-size: 13.5px; font-weight: 500; color: var(--ink2); word-break: break-all; }
+.cc-val a { color: var(--red); text-decoration: none; }
+.cc-val a:hover { text-decoration: underline; }
+
+/* ── FOOTER ── */
+footer {
+  max-width: var(--max); margin: 0 auto;
+  padding: 2rem 2.5rem;
+  display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem;
+  font-size: 12px; color: var(--ink4); font-weight: 300;
+}
+
+/* ── REVEAL ── */
+.reveal { opacity: 0; transform: translateY(14px); transition: opacity 0.55s ease, transform 0.55s ease; }
+.reveal.visible { opacity: 1; transform: none; }
+
+@media (max-width: 640px) {
+  .nav-links { gap: 1.2rem; }
+  .nav-links a { font-size: 12px; }
+  main { padding: 0 1.5rem; }
+  .hero-name { font-size: 2.3rem; }
+  h2 { font-size: 1.7rem; }
+  .stats-row { grid-template-columns: 1fr; }
+  .project-item { grid-template-columns: 36px 1fr; gap: 0 1rem; }
+  .exp-row { grid-template-columns: 1fr; }
+  .exp-date { text-align: left; }
+}
 </style>
 </head>
 <body>
 
 <nav>
-  <div class="inner">
-    <a href="#about" class="logo">Aditya Kumar</a>
-    <ul>
+  <div class="nav-inner">
+    <a href="#about" class="nav-logo">Aditya Kumar</a>
+    <ul class="nav-links">
       <li><a href="#projects">Projects</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#experience">Experience</a></li>
-      <li><a href="#blog">Writing</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </div>
@@ -125,250 +374,281 @@
 
 <main>
 
+  <!-- HERO -->
   <section id="about">
-    <p class="eyebrow">Data Analytics · Business Intelligence · Machine Learning</p>
-    <h1 class="hero-name">Aditya Kumar<br><em>data that drives decisions</em></h1>
+    <div class="section-label">Data Analytics · BI · Machine Learning</div>
+    <h1 class="hero-name">Aditya Kumar</h1>
+    <div class="hero-name-sub">turning raw data into decisions</div>
     <p class="hero-bio">
       Analytics professional with 3 years at Bank of America and an MS in Business Analytics
-      at UMass Amherst (GPA 4.0). I build end-to-end analytics systems — from SQL pipelines
-      and BI dashboards to machine learning models — with a focus on healthcare analytics,
-      forecasting, and decision-support tools.
+      at UMass Amherst (GPA 4.0). I build end-to-end pipelines, BI dashboards, and ML models
+      with a focus on healthcare analytics, forecasting, and decision-support tools.
     </p>
-    <div class="hero-meta">
-      <span>📍 Amherst, MA</span>
-      <span>🎓 MS Business Analytics · UMass Amherst · May 2026</span>
-      <span>💼 Open to full-time roles</span>
+    <div class="hero-chips">
+      <span class="chip">📍 Amherst, MA</span>
+      <span class="chip">MS Business Analytics · May 2026</span>
+      <span class="chip">Open to full-time roles</span>
     </div>
     <div class="btn-row">
       <a href="#projects" class="btn btn-primary">View my work</a>
-      <a href="https://www.linkedin.com/in/aditya-kumar1001/" class="btn btn-outline" target="_blank">LinkedIn ↗</a>
-      <a href="https://github.com/adikumar1001" class="btn btn-outline" target="_blank">GitHub ↗</a>
+      <a href="https://www.linkedin.com/in/aditya-kumar1001/" class="btn btn-ghost" target="_blank">LinkedIn ↗</a>
+      <a href="https://github.com/adikumar1001" class="btn btn-ghost" target="_blank">GitHub ↗</a>
+    </div>
+
+    <div class="stats-row reveal" style="transition-delay:0.1s">
+      <div class="stat-cell">
+        <div class="stat-number">3+</div>
+        <div class="stat-label">Years at Bank of America</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-number">4.0</div>
+        <div class="stat-label">GPA · UMass Amherst</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-number">720h</div>
+        <div class="stat-label">Annual savings via OpEx initiative</div>
+      </div>
     </div>
   </section>
 
+  <!-- PROJECTS -->
   <section id="projects">
+    <div class="section-label">Selected work</div>
     <h2>Projects</h2>
-    <div class="project-grid">
+    <div class="projects-list">
 
-      <div class="project-card reveal">
-        <div class="project-top">
-          <span class="project-title">Population Health Analytics: Heart Disease Risk &amp; Equity</span>
-          <a href="https://github.com/adikumar1001" class="project-link">GitHub ↗</a>
-        </div>
-        <p class="project-desc">
-          End-to-end healthcare analytics project on the BRFSS 2015 dataset. Built a full ETL pipeline
-          with PostgreSQL, automated QA checks, dimensional data marts, and Power BI / Tableau-ready
-          outputs surfacing health equity insights across demographics.
-        </p>
-        <div class="tag-row">
-          <span class="tag">PostgreSQL</span><span class="tag">Python</span>
-          <span class="tag">ETL</span><span class="tag">Power BI</span>
-          <span class="tag">Tableau</span><span class="tag">Healthcare Analytics</span>
+      <div class="project-item reveal">
+        <div class="project-num">01</div>
+        <div class="project-body">
+          <div class="project-head">
+            <span class="project-title">Population Health Analytics: Heart Disease Risk &amp; Equity</span>
+            <a href="https://github.com/adikumar1001/Heart-Disease" class="project-gh" target="_blank">GitHub ↗</a>
+          </div>
+          <div class="project-impact">253,680 records · Power BI dashboard · 3-page executive report</div>
+          <p class="project-desc">
+            End-to-end healthcare analytics on the BRFSS 2015 dataset. Designed a full PostgreSQL + Python pipeline
+            (staging → fact → marts), automated QA checks, and delivered a 3-page Power BI dashboard covering
+            executive KPIs, risk-driver uplift analysis, and equity/access gaps across demographics.
+          </p>
+          <div class="tags">
+            <span class="tag">PostgreSQL</span><span class="tag">Python</span><span class="tag">ETL</span>
+            <span class="tag">Power BI</span><span class="tag">Tableau</span><span class="tag">Healthcare Analytics</span>
+          </div>
         </div>
       </div>
 
-      <div class="project-card reveal">
-        <div class="project-top">
-          <span class="project-title">Airbnb Price Prediction</span>
-          <a href="https://github.com/adikumar1001" class="project-link">GitHub ↗</a>
-        </div>
-        <p class="project-desc">
-          Full ML pipeline: EDA, feature engineering, VADER sentiment analysis on reviews, and geo-clustering.
-          Benchmarked Linear Regression, Random Forest, XGBoost, and a Neural Network — delivering
-          actionable pricing recommendations for hosts.
-        </p>
-        <div class="tag-row">
-          <span class="tag">Python</span><span class="tag">XGBoost</span>
-          <span class="tag">Random Forest</span><span class="tag">VADER NLP</span>
-          <span class="tag">Scikit-learn</span><span class="tag">Geo-clustering</span>
-        </div>
-      </div>
-
-      <div class="project-card reveal">
-        <div class="project-top">
-          <span class="project-title">NBA Performance Analytics (2000–2025)</span>
-          <a href="https://github.com/adikumar1001" class="project-link">GitHub ↗</a>
-        </div>
-        <p class="project-desc">
-          SQL-first analysis of 25 years of NBA data. Examined team performance trends, back-to-back
-          fatigue effects, clutch scorer profiles, and draft value using window functions and CTEs in SQLite.
-        </p>
-        <div class="tag-row">
-          <span class="tag">SQL</span><span class="tag">SQLite</span>
-          <span class="tag">Window Functions</span><span class="tag">Sports Analytics</span>
+      <div class="project-item reveal">
+        <div class="project-num">02</div>
+        <div class="project-body">
+          <div class="project-head">
+            <span class="project-title">Airbnb Price Prediction — Bozeman, MT</span>
+            <a href="https://github.com/adikumar1001" class="project-gh" target="_blank">GitHub ↗</a>
+          </div>
+          <div class="project-impact">R² 0.62 · MAE ≈ $54 · 40,000+ reviews processed</div>
+          <p class="project-desc">
+            Full ML pipeline combining listings with 40k+ guest reviews. Engineered features (amenity flags,
+            VADER sentiment, geo-clusters), removed multicollinearity via VIF, then benchmarked Linear Regression,
+            Random Forest, XGBoost (Hyperopt/TPE), and a Neural Network (Keras). Best: NN at R² 0.62, MAE ≈ $54.
+            Key drivers: bedrooms, amenities, location, and sentiment.
+          </p>
+          <div class="tags">
+            <span class="tag">Python</span><span class="tag">XGBoost</span><span class="tag">Keras</span>
+            <span class="tag">VADER NLP</span><span class="tag">Scikit-learn</span><span class="tag">Feature Engineering</span>
+          </div>
         </div>
       </div>
 
-      <div class="project-card reveal">
-        <div class="project-top">
-          <span class="project-title">East Coast Living Index — Best Place to Live</span>
-          <a href="https://github.com/adikumar1001" class="project-link">GitHub ↗</a>
+      <div class="project-item reveal">
+        <div class="project-num">03</div>
+        <div class="project-body">
+          <div class="project-head">
+            <span class="project-title">Loan Default Prediction — Credit Risk ML in R</span>
+            <a href="https://github.com/adikumar1001" class="project-gh" target="_blank">GitHub ↗</a>
+          </div>
+          <div class="project-impact">92.9% accuracy · AUC 0.97 · 45,000 applications</div>
+          <p class="project-desc">
+            Compared Random Forest, GBM, and KNN on 45,000 loan applications. Best overall: Random Forest
+            (Accuracy 92.9%, Sensitivity 78%, Specificity 97%, Precision 89.8%). Best AUC: GBM at 0.9716.
+            Delivered ROC visuals and an RMarkdown report to help lenders flag high-risk applicants earlier.
+          </p>
+          <div class="tags">
+            <span class="tag">R</span><span class="tag">Random Forest</span><span class="tag">GBM</span>
+            <span class="tag">KNN</span><span class="tag">ROC / AUC</span><span class="tag">Credit Risk</span>
+          </div>
         </div>
-        <p class="project-desc">
-          Interactive Excel dashboard ranking East Coast states across 8 weighted dimensions:
-          safety, healthcare, education, rent, cost of living, crime, climate, and sunshine.
-          Built for data-driven relocation decisions.
-        </p>
-        <div class="tag-row">
-          <span class="tag">Excel</span><span class="tag">Dashboard Design</span>
-          <span class="tag">Index Modeling</span><span class="tag">Data Visualization</span>
+      </div>
+
+      <div class="project-item reveal">
+        <div class="project-num">04</div>
+        <div class="project-body">
+          <div class="project-head">
+            <span class="project-title">Whiskey Assortment Optimization — Cluster Analysis</span>
+            <a href="https://github.com/adikumar1001" class="project-gh" target="_blank">GitHub ↗</a>
+          </div>
+          <div class="project-impact">111 Scotch brands · 3-cluster solution · Retail stocking recommendations</div>
+          <p class="project-desc">
+            Applied K-Means clustering on sensory attributes (color, nose, body, palate, finish) for 111 Scotch
+            whiskey brands. Selected a 3-cluster solution using silhouette scores and the elbow method, identifying
+            light/fresh, sweet-sherried, and peated-smoky segments. Added secondary analysis on age, ABV, and
+            region to refine stocking recommendations for a boutique spirits retailer.
+          </p>
+          <div class="tags">
+            <span class="tag">Python</span><span class="tag">K-Means</span><span class="tag">Scikit-learn</span>
+            <span class="tag">Silhouette Analysis</span><span class="tag">Pandas</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-item reveal">
+        <div class="project-num">05</div>
+        <div class="project-body">
+          <div class="project-head">
+            <span class="project-title">Netflix Content Analytics Dashboard</span>
+            <a href="https://github.com/adikumar1001" class="project-gh" target="_blank">GitHub ↗</a>
+          </div>
+          <div class="project-impact">Power BI · DAX measures · Global content strategy insights</div>
+          <p class="project-desc">
+            Power BI dashboard analyzing Netflix's global content library. Covers catalog overview (movies vs. shows,
+            avg IMDb score, age segmentation), ratings and popularity breakdown, content growth trends by year and
+            decade, and scatter plots of IMDb scores vs. votes — enabling data-driven content strategy decisions.
+          </p>
+          <div class="tags">
+            <span class="tag">Power BI</span><span class="tag">DAX</span>
+            <span class="tag">Data Visualization</span><span class="tag">Content Analytics</span>
+          </div>
         </div>
       </div>
 
     </div>
   </section>
 
+  <!-- SKILLS -->
   <section id="skills">
+    <div class="section-label">Toolkit</div>
     <h2>Skills</h2>
-    <div class="skills-wrap">
-      <div class="skill-group reveal">
+    <div class="skills-grid">
+      <div class="skill-col reveal">
         <h3>Languages</h3>
-        <ul class="skill-list"><li>Python</li><li>SQL</li><li>R</li><li>Java</li></ul>
+        <ul><li>Python</li><li>SQL</li><li>R</li><li>Java</li></ul>
       </div>
-      <div class="skill-group reveal">
+      <div class="skill-col reveal">
         <h3>ML & Data Science</h3>
-        <ul class="skill-list"><li>Scikit-learn</li><li>XGBoost / LightGBM</li><li>Pandas / NumPy</li><li>VADER NLP</li><li>Hadoop</li></ul>
+        <ul><li>Scikit-learn</li><li>XGBoost / LightGBM</li><li>Keras / Neural Nets</li><li>Pandas / NumPy</li><li>VADER NLP</li></ul>
       </div>
-      <div class="skill-group reveal">
+      <div class="skill-col reveal">
         <h3>BI & Visualization</h3>
-        <ul class="skill-list"><li>Power BI</li><li>Tableau</li><li>Excel (Macros, PivotTables)</li><li>Alteryx</li></ul>
+        <ul><li>Power BI + DAX</li><li>Tableau</li><li>Excel (Macros, LAMBDA)</li><li>Alteryx</li></ul>
       </div>
-      <div class="skill-group reveal">
+      <div class="skill-col reveal">
         <h3>Databases</h3>
-        <ul class="skill-list"><li>PostgreSQL</li><li>MySQL</li><li>Oracle</li><li>Snowflake</li><li>SQLite</li></ul>
+        <ul><li>PostgreSQL</li><li>MySQL</li><li>Oracle</li><li>Snowflake</li><li>SQLite</li></ul>
       </div>
-      <div class="skill-group reveal">
+      <div class="skill-col reveal">
         <h3>Monitoring & Ops</h3>
-        <ul class="skill-list"><li>Splunk</li><li>Dynatrace</li><li>AppDynamics</li><li>AutoSys</li><li>BMC BladeLogic</li></ul>
+        <ul><li>Splunk</li><li>Dynatrace</li><li>AppDynamics</li><li>AutoSys</li></ul>
       </div>
-      <div class="skill-group reveal">
-        <h3>Tools & Platforms</h3>
-        <ul class="skill-list"><li>SAP</li><li>Jira / ServiceNow</li><li>RStudio</li><li>GitHub / VS Code</li></ul>
+      <div class="skill-col reveal">
+        <h3>Tools</h3>
+        <ul><li>SAP</li><li>Jira / ServiceNow</li><li>GitHub / VS Code</li><li>RStudio</li></ul>
       </div>
     </div>
   </section>
 
+  <!-- EXPERIENCE -->
   <section id="experience">
+    <div class="section-label">Background</div>
     <h2>Experience</h2>
+
     <div class="exp-list">
 
-      <div class="exp-item reveal">
-        <div class="exp-meta">
-          <span class="exp-role">Technical Analyst / Data Analyst</span>
-          <span class="exp-date">June 2021 – July 2024</span>
+      <div class="exp-row reveal">
+        <div>
+          <div class="exp-role">Technical Analyst / Data Analyst</div>
+          <div class="exp-company">Bank of America</div>
         </div>
-        <div class="exp-company">Bank of America</div>
-        <ul class="exp-bullets">
-          <li>Resolved 100+ application incidents quarterly; improved system uptime by 15% and reduced downtime incidents by 90%</li>
+        <div class="exp-date">June 2021 – July 2024</div>
+        <ul class="exp-ul">
+          <li>Resolved 100+ application incidents quarterly — improved uptime by 15%, reduced downtime incidents by 90%</li>
           <li>Built Splunk dashboards for real-time monitoring and root-cause analysis across production environments</li>
-          <li>Automated operational reports using Excel macros, XLOOKUP, and PivotTables — cutting turnaround time by 70%</li>
-          <li>Managed AutoSys batch workflows sustaining 95% on-time job completion rate</li>
+          <li>Automated operational reports (Excel macros, XLOOKUP, PivotTables) — cut turnaround time by 70%</li>
+          <li>Managed AutoSys batch workflows sustaining 95% on-time completion rate</li>
           <li>Led an OpEx initiative that saved 720 hours per year through process re-engineering</li>
         </ul>
       </div>
 
-      <div class="exp-item reveal">
-        <div class="exp-meta">
-          <span class="exp-role">Data Analyst Intern</span>
-          <span class="exp-date">November 2019 – January 2020</span>
+      <div class="exp-row reveal">
+        <div>
+          <div class="exp-role">Data Analyst Intern</div>
+          <div class="exp-company">ECS Infotech Pvt. Ltd.</div>
         </div>
-        <div class="exp-company">ECS Infotech Pvt. Ltd.</div>
-        <ul class="exp-bullets">
-          <li>Performed forensic data collection and analysis using SQL to support active fraud investigations</li>
+        <div class="exp-date">Nov 2019 – Jan 2020</div>
+        <ul class="exp-ul">
+          <li>Performed forensic data collection and SQL analysis to support active fraud investigations</li>
           <li>Built investigator dashboards surfacing anomalous access patterns and high-risk transactions</li>
+        </ul>
+      </div>
+
+      <div class="exp-row reveal">
+        <div>
+          <div class="exp-role">Web Intern</div>
+          <div class="exp-company">Oil and Natural Gas Corporation Ltd (ONGC) · Sivasagar, Assam</div>
+        </div>
+        <div class="exp-date">June 2019 – July 2019</div>
+        <ul class="exp-ul">
+          <li>Designed, developed, and deployed a custom web application using PHP and MySQL within a one-month timeline</li>
+          <li>Delivered all requirements on schedule, significantly improving user experience for the internal tool</li>
         </ul>
       </div>
 
     </div>
 
-    <div class="edu-section reveal">
-      <h3>Education</h3>
-      <div class="edu-item">
-        <div>
-          <div class="edu-row">
-            <span class="edu-degree">MS in Business Analytics</span>
-            <span class="edu-gpa">GPA 4.00 / 4.00</span>
-          </div>
-          <div class="edu-school">University of Massachusetts Amherst — Isenberg School of Management</div>
-          <div class="edu-detail">Candidate May 2026 · Amherst, MA</div>
+    <div class="edu-list">
+      <div class="edu-item reveal">
+        <div class="edu-deg">
+          MS in Business Analytics
+          <span class="gpa-pill">GPA 4.00</span>
         </div>
-        <div>
-          <div class="edu-row">
-            <span class="edu-degree">BTech in Computer Science</span>
-            <span style="font-size:13px;color:var(--subtle);">GPA 8.29 / 10.0</span>
-          </div>
-          <div class="edu-school">SRM Institute of Science &amp; Technology</div>
-          <div class="edu-detail">May 2021</div>
-        </div>
+        <div class="edu-school">University of Massachusetts Amherst — Isenberg School of Management</div>
+        <div class="edu-meta">Candidate May 2026 · Amherst, MA</div>
+      </div>
+      <div class="edu-item reveal">
+        <div class="edu-deg">BTech in Computer Science</div>
+        <div class="edu-school">SRM Institute of Science &amp; Technology</div>
+        <div class="edu-meta">May 2021 · GPA 8.29 / 10.0</div>
       </div>
     </div>
+
   </section>
 
-  <section id="blog">
-    <h2>Writing</h2>
-    <p style="font-size:15px;color:var(--muted);margin-bottom:1.75rem;max-width:500px;line-height:1.75;">
-      Articles on analytics engineering, ML in production, and lessons from real-world projects.
-      Follow on LinkedIn for updates when posts go live.
-    </p>
-    <div class="post-list">
-      <div class="post-item reveal">
-        <div class="post-left">
-          <a href="#" class="post-title">What 3 years of incident management taught me about data quality</a>
-          <span class="post-tag">Coming soon</span>
-        </div>
-        <span class="post-date">2025</span>
-      </div>
-      <div class="post-item reveal">
-        <div class="post-left">
-          <a href="#" class="post-title">Building a health equity dashboard with BRFSS data — end to end</a>
-          <span class="post-tag">Coming soon</span>
-        </div>
-        <span class="post-date">2025</span>
-      </div>
-      <div class="post-item reveal">
-        <div class="post-left">
-          <a href="#" class="post-title">Why XGBoost beat the neural network on my Airbnb dataset</a>
-          <span class="post-tag">Coming soon</span>
-        </div>
-        <span class="post-date">2025</span>
-      </div>
-      <div class="post-item reveal">
-        <div class="post-left">
-          <a href="#" class="post-title">SQL window functions: the only guide you will ever need</a>
-          <span class="post-tag">Coming soon</span>
-        </div>
-        <span class="post-date">2025</span>
-      </div>
-    </div>
-  </section>
-
+  <!-- CONTACT -->
   <section id="contact">
+    <div class="section-label">Say hello</div>
     <h2>Get in touch</h2>
-    <p class="contact-bio">
-      Actively seeking full-time roles in data analytics, business intelligence, and ML engineering.
+    <p class="contact-note">
+      Actively seeking full-time roles in data analytics, BI, and ML engineering.
       Open to healthcare, finance, and tech. Always happy to chat about projects or collaborations.
     </p>
-    <div class="contact-grid">
-      <div class="contact-item reveal">
-        <div class="contact-label">Email</div>
-        <div class="contact-val"><a href="mailto:adityaku@umass.edu">adityaku@umass.edu</a></div>
+    <div class="contact-cards reveal">
+      <div class="contact-card">
+        <div class="cc-label">Email</div>
+        <div class="cc-val"><a href="mailto:adityaku@umass.edu">adityaku@umass.edu</a></div>
       </div>
-      <div class="contact-item reveal">
-        <div class="contact-label">Phone</div>
-        <div class="contact-val">+1 (413) 472-0332</div>
+      <div class="contact-card">
+        <div class="cc-label">Phone</div>
+        <div class="cc-val">+1 (413) 472-0332</div>
       </div>
-      <div class="contact-item reveal">
-        <div class="contact-label">LinkedIn</div>
-        <div class="contact-val"><a href="https://www.linkedin.com/in/aditya-kumar1001/" target="_blank">aditya-kumar1001 ↗</a></div>
+      <div class="contact-card">
+        <div class="cc-label">LinkedIn</div>
+        <div class="cc-val"><a href="https://www.linkedin.com/in/aditya-kumar1001/" target="_blank">aditya-kumar1001 ↗</a></div>
       </div>
-      <div class="contact-item reveal">
-        <div class="contact-label">GitHub</div>
-        <div class="contact-val"><a href="https://github.com/adikumar1001" target="_blank">adikumar1001 ↗</a></div>
+      <div class="contact-card">
+        <div class="cc-label">GitHub</div>
+        <div class="cc-val"><a href="https://github.com/adikumar1001" target="_blank">adikumar1001 ↗</a></div>
       </div>
     </div>
     <div class="btn-row">
       <a href="mailto:adityaku@umass.edu" class="btn btn-primary">Send me an email</a>
-      <a href="https://www.linkedin.com/in/aditya-kumar1001/" class="btn btn-outline" target="_blank">Connect on LinkedIn ↗</a>
+      <a href="https://www.linkedin.com/in/aditya-kumar1001/" class="btn btn-ghost" target="_blank">LinkedIn ↗</a>
     </div>
   </section>
 
@@ -384,7 +664,7 @@
     entries.forEach(e => {
       if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
     });
-  }, { threshold: 0.08 });
+  }, { threshold: 0.07 });
   document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 </script>
 
