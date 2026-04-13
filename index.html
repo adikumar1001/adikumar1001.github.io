@@ -57,7 +57,7 @@ nav {
   letter-spacing: 0.01em;
 }
 .nav-logo span { color: var(--red); }
-.nav-links { list-style: none; display: flex; gap: 1.8rem; }
+.nav-links { list-style: none; display: flex; gap: 1.6rem; }
 .nav-links a {
   font-size: 13px; font-weight: 400; color: var(--ink3);
   text-decoration: none; letter-spacing: 0.02em;
@@ -236,6 +236,44 @@ h2 {
   background: var(--gold-bg); color: var(--gold-dim);
   border: 1px solid var(--gold-bdr); padding: 3px 10px; border-radius: 10px;
 }
+
+/* ── CERTIFICATIONS ── */
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+}
+.cert-card {
+  background: var(--bg2);
+  padding: 1.3rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  transition: background 0.15s;
+}
+.cert-card:hover { background: var(--bg3); }
+.cert-issuer {
+  font-size: 10px; font-weight: 500;
+  text-transform: uppercase; letter-spacing: 0.12em;
+  color: var(--red);
+}
+.cert-name {
+  font-size: 13.5px; font-weight: 500;
+  color: var(--ink); line-height: 1.35;
+}
+.cert-meta {
+  font-size: 12px; color: var(--ink4); font-weight: 300;
+  margin-top: 2px;
+}
+.cert-id {
+  font-size: 11px; color: var(--ink4); font-weight: 300;
+  font-family: 'Inter', monospace; letter-spacing: 0.03em;
+}
+
 .contact-note { font-size: 16.5px; color: var(--ink2); font-weight: 300; max-width: 460px; line-height: 1.85; margin-bottom: 2.5rem; }
 .contact-cards {
   display: grid; grid-template-columns: repeat(auto-fill, minmax(175px, 1fr));
@@ -282,6 +320,7 @@ footer {
       <li><a href="#skills">Skills</a></li>
       <li><a href="#experience">Experience</a></li>
       <li><a href="#education">Education</a></li>
+      <li><a href="#certifications">Certs</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </div>
@@ -363,9 +402,9 @@ footer {
             Built a sports analytics pipeline to estimate expected goals (xG proxy) and model comeback probability
             for Premier League matches. Used Random Forest regressors on match stats (shots, SOT, corners, fouls,
             cards) to generate home/away xG and team averages. Applied Logistic Regression with SMOTE to predict
-            whether a team trailing at halftime draws or wins exported team comeback rates and match-level
-            predictions to Excel. Key findings: highest home comeback rate Tottenham - 5.35%; top avg home xG -
-            Brighton 2.60; top avg away xG Liverpool - 1.55.
+            whether a team trailing at halftime draws or wins — exported team comeback rates and match-level
+            predictions to Excel. Key findings: highest home comeback rate Tottenham 5.35%; top avg home xG
+            Brighton 2.60; top avg away xG Liverpool 1.55.
           </p>
           <div class="tags">
             <span class="tag">Python</span><span class="tag">Random Forest</span><span class="tag">Logistic Regression</span>
@@ -473,7 +512,7 @@ footer {
             Built an interactive dashboard comparing 14 U.S. East Coast states across six factors: average
             temperature, crime rate, healthcare quality, housing affordability, education score, and cost of
             living. Created a transparent composite score with min-max normalization and weight sliders so users
-            can reflect their own priorities top state, top 5, and category winners update instantly. Data
+            can reflect their own priorities — top state, top 5, and category winners update instantly. Data
             modeled with Power Query; calculations use dynamic arrays (LET, LAMBDA, SORT, FILTER, XLOOKUP).
           </p>
           <div class="tags">
@@ -602,6 +641,75 @@ footer {
     </div>
   </section>
 
+  <!-- CERTIFICATIONS -->
+  <section id="certifications">
+    <div class="section-label">Credentials</div>
+    <h2>Licenses &amp; Certifications</h2>
+    <div class="cert-grid reveal">
+
+      <div class="cert-card">
+        <div class="cert-issuer">Snowflake</div>
+        <div class="cert-name">Intro to Snowflake for Devs, Data Scientists &amp; Data Engineers</div>
+        <div class="cert-meta">Issued Mar 2026</div>
+        <div class="cert-id">ID: UQP1YDR8EGN9</div>
+      </div>
+
+      <div class="cert-card">
+        <div class="cert-issuer">Maven Analytics</div>
+        <div class="cert-name">ChatGPT &amp; Generative AI for Data Analytics</div>
+        <div class="cert-meta">Issued Aug 2025</div>
+        <div class="cert-id">ID: JL4ZYDS4SBLP</div>
+      </div>
+
+      <div class="cert-card">
+        <div class="cert-issuer">Coursera</div>
+        <div class="cert-name">Introduction to Microsoft Azure Cloud Services</div>
+        <div class="cert-meta">Issued Jul 2025 · Azure VMs · Cloud Infrastructure</div>
+      </div>
+
+      <div class="cert-card">
+        <div class="cert-issuer">Isenberg School · UMass Amherst</div>
+        <div class="cert-name">Excel Advanced User</div>
+        <div class="cert-meta">Issued Jul 2025</div>
+        <div class="cert-id">ID: rdIM75BToruOvV</div>
+      </div>
+
+      <div class="cert-card">
+        <div class="cert-issuer">Microsoft Excel Collegiate Challenge</div>
+        <div class="cert-name">MECC Regionals '25 — UMass Amherst</div>
+        <div class="cert-meta">Issued Apr 2025</div>
+        <div class="cert-id">ID: 139538461</div>
+      </div>
+
+      <div class="cert-card">
+        <div class="cert-issuer">Alteryx</div>
+        <div class="cert-name">Machine Learning Fundamentals Micro-Credential</div>
+        <div class="cert-meta">Issued Oct 2024 · Expires Dec 2033</div>
+      </div>
+
+      <div class="cert-card">
+        <div class="cert-issuer">Coursera</div>
+        <div class="cert-name">Introduction to Data Science in Python</div>
+        <div class="cert-meta">Issued Jul 2020</div>
+      </div>
+
+      <div class="cert-card">
+        <div class="cert-issuer">Coursera</div>
+        <div class="cert-name">Programming for Everybody — Getting Started with Python</div>
+        <div class="cert-meta">Issued Apr 2020</div>
+        <div class="cert-id">ID: A5L7R6W8HJFX</div>
+      </div>
+
+      <div class="cert-card">
+        <div class="cert-issuer">Coursera</div>
+        <div class="cert-name">Introduction to Business Analytics: Communicating with Data</div>
+        <div class="cert-meta">Issued Jul 2020</div>
+        <div class="cert-id">ID: 9HP39SYSWEHC</div>
+      </div>
+
+    </div>
+  </section>
+
   <section id="contact">
     <div class="section-label">Say hello</div>
     <h2>Get in touch</h2>
@@ -628,9 +736,9 @@ footer {
       </div>
     </div>
     <div class="btn-row">
-     <a href="https://mail.google.com/mail/?view=cm&fs=1&to=adikumar1001@gmail.com" class="btn btn-primary" target="_blank">Send me an email</a>
-     <a href="https://www.linkedin.com/in/aditya-kumar1001/" class="btn btn-ghost" target="_blank">LinkedIn ↗</a>
-   </div>
+      <a href="https://mail.google.com/mail/?view=cm&fs=1&to=adikumar1001@gmail.com" class="btn btn-primary" target="_blank">Send me an email</a>
+      <a href="https://www.linkedin.com/in/aditya-kumar1001/" class="btn btn-ghost" target="_blank">LinkedIn ↗</a>
+    </div>
   </section>
 
 </main>
